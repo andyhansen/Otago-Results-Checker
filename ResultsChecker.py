@@ -29,7 +29,8 @@ while not changed:
   if old_text != new_text:
     changed = True
   old_text = new_text
-  sleep(10)
+  print old_text
+  sleep(120)
 
 print "The results are up"
 #The code that seems a message to you on facebook
