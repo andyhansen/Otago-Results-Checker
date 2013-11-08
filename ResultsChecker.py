@@ -2,14 +2,19 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from time import sleep
 
+username = raw_input("Enter your uni username: ")
+password = raw_input("Enter your uni password: ")
+fbusername = raw_input("Enter your facebook email: ")
+fbpassword = raw_input("Enter your facebook password: ")
+fbmessage = raw_input("Enter the url of your facebook inbox: ")
+
 driver = webdriver.Firefox()
-#load the pims page
 driver.get("https://corpapp.otago.ac.nz/pims")
 sleep(5) #wait for redirects
 elem = driver.find_element_by_name("username")
-elem.send_keys("hanan445")
+elem.send_keys(username)
 elem = driver.find_element_by_name("password")
-elem.send_keys("poo")
+elem.send_keys(password)
 elem.send_keys(Keys.RETURN)
 
 #keep checking the results page until Unconfirmed comes up
@@ -24,12 +29,12 @@ while not changed:
 
 driver.get("https://www.facebook.com")
 elem = driver.find_element_by_name("email")
-elem.send_keys("ahansen.it@gmail.com")
+elem.send_keys(fbusername)
 elem = driver.find_element_by_name("pass")
-elem.send_keys("megapoo")
+elem.send_keys(fbpassword)
 elem.send_keys(Keys.RETURN)
 #change this to your facebook inbox
-driver.get("https://www.facebook.com/messages/andy.s.hansen")
+driver.get(fbmessage)
 elem = driver.find_element_by_name("message_body")
 elem.send_keys("Results are up")
 elem.send_keys(Keys.RETURN)
