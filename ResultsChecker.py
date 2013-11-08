@@ -13,7 +13,7 @@ elem.send_keys("poo")
 elem.send_keys(Keys.RETURN)
 
 #keep checking the results page until Unconfirmed comes up
-changed = True
+changed = False
 while not changed:
   sleep(120)
   print "Checking"
