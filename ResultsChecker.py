@@ -29,7 +29,9 @@ while not changed:
   if old_text != new_text:
     changed = True
   old_text = new_text
-  print old_text
+  #the line below is just to give the user some feedback, comment it
+  #out if you don't care
+  print old_text, "\n"
   sleep(120)
 
 print "The results are up"
