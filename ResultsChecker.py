@@ -60,7 +60,7 @@ while True:
     sendFacebookMessage(fbusername, fbpassword, fbmessage, old_text)
     break
   old_text = new_text
-  print "Last checked at:", strftime("%d/%m/%Y %H:%M", localtime())
+  print "Last checked at:", strftime("%a, %d %b %Y %H:%M", localtime())
   sleep(120)
 
 driver.close()
